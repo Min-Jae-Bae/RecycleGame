@@ -65,7 +65,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 09d50516de3150b4aa094ef2d9909388, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -129,6 +129,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rbody: {fileID: 0}
+  mycoll: {fileID: 0}
   ismove: 0
   speed: 0
 --- !u!114 &4300367032519656619
@@ -145,7 +146,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myType: 0
   myState: 0
+  childObject: []
   add_score: 5
   less_score: 5
   movement: {fileID: 0}
-  childObject: []
+  RealType: 0

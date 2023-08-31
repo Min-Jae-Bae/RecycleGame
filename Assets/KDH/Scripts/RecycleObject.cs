@@ -8,7 +8,9 @@ using UnityEngine;
 [RequireComponent(typeof(Movement))]
 public class RecycleObject : MonoBehaviour
 {
-    
+    //분해효과음
+    public AudioClip clip;
+
     //플라스틱인지,종이인지, 쓰레기 종류에 대한 정의가 필요하다.
     public enum ObjectType { 
         Plastic,Paper,Can,Glass,Complex,Last
@@ -108,6 +110,7 @@ public class RecycleObject : MonoBehaviour
     //분해 버튼을 눌렀을때, 나는 너를 분해하겠다.
     public void res() {
         //너는 너의 요소들을 알고있다.
+        SoundManager.instance.PlaySFX(clip);
         foreach (RecycleObject resobject in childObject) {
             //나도 변하고 
             this.myType = RealType;

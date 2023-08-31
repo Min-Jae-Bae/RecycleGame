@@ -29,7 +29,7 @@ public class Spawner : MonoBehaviour
             //go.transform.position = transform.position;
             go.gameObject.layer = LayerMask.NameToLayer("Parent");
             RecycleObject obj = go.GetComponent<RecycleObject>();
-            Color myColor = Color.white;
+            /*Color myColor = Color.white;
             switch (obj.myType)
             {
                 case RecycleObject.ObjectType.Plastic:
@@ -42,7 +42,7 @@ public class Spawner : MonoBehaviour
                     myColor = Color.yellow;
                     break;
             }
-            go.GetComponent<MeshRenderer>().material.color = myColor;
+            go.GetComponent<MeshRenderer>().material.color = myColor;*/
             //생성한곳에 타입을 지정함.
 
         }

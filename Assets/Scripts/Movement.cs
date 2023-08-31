@@ -10,7 +10,6 @@ public class Movement : MonoBehaviour
     {
         rbody = GetComponent<Rigidbody>();
     }
-
     public bool ismove;
     public float speed;
     void Update()
@@ -19,19 +18,29 @@ public class Movement : MonoBehaviour
     }
 
     Coroutine cor;
+    public void stopmove()
+    {
+        if(cor!=null)
+            StopCoroutine(cor);
+
+    }
     private void OnCollisionEnter(Collision collision)
     {
-        if (cor == null) {
-            cor = StartCoroutine(move());
-            
+        move();
+    }
+
+    public void move() {
+        if (cor == null)
+        {
+            cor = StartCoroutine(MoveCor());
+
         }
     }
-    IEnumerator move() {
+    IEnumerator MoveCor() {
         yield return null;
         while (true) {
             yield return new WaitForSeconds(Time.deltaTime);
             rbody.velocity = new Vector3(-1, rbody.velocity.y, rbody.velocity.z);
         }
-            
     }
 }

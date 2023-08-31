@@ -21,14 +21,19 @@ public class Trashcan : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         //쓰레기가 들어올때 
-        RecycleObject obj =  other.GetComponent<RecycleObject>();
+        RecycleObject obj = other.GetComponent<RecycleObject>();
+        obj = obj.enabled ? obj : null;
+        if (!obj)
+            return;
         //맞는 쓰레기통에 넣었니?
         if (TrashType == obj.myType)
         {
             Debug.Log("너 맞음");
+            ScoreManager.instance.SCORE+= obj.add_score;
         }
         else {
             Debug.Log("너 틀림");
+            ScoreManager.instance.SCORE -= obj.less_score;
         }
         Destroy(other.gameObject);
     }

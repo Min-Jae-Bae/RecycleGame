@@ -33,7 +33,7 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         currentTime = maxTime;
-        StartCoroutine(Timer(60,1));
+        StartCoroutine(Timer(currentTime, 1));
 
         SoundManager.instance.PlayBGM(clip);
     }
@@ -52,6 +52,8 @@ public class GameManager : MonoBehaviour
             currentTime -= stopTime;
             timeImage.fillAmount = ((float)(currentTime) / (float)(maxTime));
         }
+
+        GameOver();
     }
 
     IEnumerator Timer(int waitTime,System.Action<int> action)
@@ -65,8 +67,11 @@ public class GameManager : MonoBehaviour
     }
 
     public GameObject gameover;
+    public AudioClip gameOverClip;
     public void GameOver() {
         gameover.SetActive(true);
+        SoundManager.instance.PlayBGM(gameOverClip);
+        Time.timeScale = 0;
     
     }
 }

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -27,6 +28,7 @@ public class GameManager : MonoBehaviour
     public static GameManager instance;
 
     public Text timeText;
+    public Text CommentText;
     public Image timeImage;
 
     public AudioClip clip;
@@ -70,7 +72,10 @@ public class GameManager : MonoBehaviour
 
     public GameObject gameover;
     public AudioClip gameOverClip;
+    public GameObject WarningUI;
     public void GameOver() {
+        CommentText.text =  ScoreManager.instance.GameOver();
+        WarningUI.SetActive(false);
         gameover.SetActive(true);
         SoundManager.instance.PlayBGM(gameOverClip);
         Time.timeScale = 0;
@@ -82,5 +87,14 @@ public class GameManager : MonoBehaviour
     }
     public void Offanim() {
         anim.SetTrigger("Off");
+    }
+
+
+    public void restart() {
+        SceneManager.LoadScene(1);
+    }
+
+    public void exit() {
+        Application.Quit();
     }
 }

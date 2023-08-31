@@ -5,10 +5,13 @@ using UnityEngine;
 public class Movement : MonoBehaviour
 {
     public Rigidbody rbody;
+    public Collider mycoll;
     // Start is called before the first frame update
     void Start()
     {
         rbody = GetComponent<Rigidbody>();
+        mycoll = GetComponent<Collider>();
+        rbody.constraints = RigidbodyConstraints.FreezePositionZ;
     }
     public bool ismove;
     public float speed;

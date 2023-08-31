@@ -45,6 +45,9 @@ public class RecycleObject : MonoBehaviour
         }
     
     }
+    //자신을 분해하면 어떤 오브젝트로 분해될것인지.
+    public List<RecycleObject> childObject = new List<RecycleObject>();
+    
 
     //점수를 몇점 줄것인지
     public int add_score = 5;
@@ -53,24 +56,39 @@ public class RecycleObject : MonoBehaviour
     public Movement movement;
     // Start is called before the first frame update
 
-    //자신을 분해하면 어떤 오브젝트로 분해될것인지.
-    public RecycleObject[] childObject;
+
+    //분해되었을때 무엇으로 변할것인지.
+    public ObjectType RealType;
 
     private void Awake()
     {
         //movement.enabled = IsParent;
+        //원래는 이렇게 하면 안되는디.. 2차까지만 분해니까 자동으로 리스트 주입
+        for (int i = 0; i < transform.childCount; i++)
+        {
 
+            RecycleObject rec = transform.GetChild(i).GetComponent<RecycleObject>();
+            if (rec != null)
+            {
+                childObject.Add(rec);
+            }
+
+        }
     }
     void Start()
     {
         movement = GetComponent<Movement>();
-        if (myType == ObjectType.Complex && childObject.Length > 0) {
+        //복합적인 물체는 자신의 자식을 비활성화
+        if (myType == ObjectType.Complex && childObject.Count > 0) {
             foreach (RecycleObject resobject in childObject)
             {
                 resobject.movement.rbody.isKinematic = true;
                 resobject.movement.enabled = false;
             }
         }
+
+        
+        
     }
 
     // Update is called once per frame
@@ -91,14 +109,16 @@ public class RecycleObject : MonoBehaviour
     public void res() {
         //너는 너의 요소들을 알고있다.
         foreach (RecycleObject resobject in childObject) {
+            //나도 변하고 
+            this.myType = RealType;
             //너와 너의 요소들의 연결을 끊는다!
             resobject.transform.parent = null;
             //그리고 그 요소들은 독립적으로 작동한다.
             resobject.gameObject.layer = LayerMask.NameToLayer("Parent");
             resobject.movement.rbody.isKinematic = false;
-            movement.enabled = true;
-            movement.rbody.useGravity = true;
-
+            resobject.movement.enabled = true;
+            resobject.movement.rbody.useGravity = true;
+            resobject.movement.mycoll.enabled = true;
         }
     }
 

@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+
+    public float playerMouseCursorForce = 1;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,7 +22,7 @@ public class Player : MonoBehaviour
             RaycastHit hitinfo;
             int mask = 1 << LayerMask.NameToLayer("Parent");
             //레이를 발사~~~
-            if (Physics.Raycast(ray, out hitinfo,50,mask)) {
+            if (Physics.Raycast(ray, out hitinfo,100,mask)) {
                 //만약, ray에 닿은놈이.
                 rec = hitinfo.collider.gameObject.GetComponent<RecycleObject>();
                 //있느냐.
@@ -48,7 +50,8 @@ public class Player : MonoBehaviour
                 if (Physics.Raycast(ray, out hit,50.0f, mask)) {
                     Debug.Log("ss");
                     rec.transform
-                        .position = hit.point + Vector3.up * 10;
+                        .position = hit.point + Vector3.up * playerMouseCursorForce;
+                    rec.movement.rbody.velocity = Vector3.zero;
                 }
                 
                 

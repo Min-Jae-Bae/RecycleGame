@@ -130,6 +130,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rbody: {fileID: 0}
+  mycoll: {fileID: 0}
   ismove: 0
   speed: 0
 --- !u!114 &4727649949215247119
@@ -146,7 +147,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myType: 2
   myState: 0
-  add_score: 5
-  less_score: 5
-  movement: {fileID: 0}
   childObject: []
+  add_score: 2
+  less_score: 3
+  movement: {fileID: 0}
+  RealType: 0

@@ -23,20 +23,31 @@ public class Movement : MonoBehaviour
     Coroutine cor;
     public void stopmove()
     {
-        if(cor!=null)
+        if (cor != null) { 
             StopCoroutine(cor);
+            cor = null;
+        }
+            
 
     }
     private void OnCollisionEnter(Collision collision)
     {
-        move();
+        if (collision.gameObject.CompareTag("Belt")) {
+            move();
+        }
+    }
+    private void OnCollisionExit(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Belt"))
+        {
+            stopmove();
+        }
     }
 
     public void move() {
         if (cor == null)
         {
             cor = StartCoroutine(MoveCor());
-
         }
     }
     IEnumerator MoveCor() {

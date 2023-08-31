@@ -17,28 +17,25 @@ public class GameManager : MonoBehaviour
                 case MainGameState.Start:
                     break;
                 case MainGameState.Pause:
-
                     break;
                 case MainGameState.Defeat:
-
                     break;
-            
             }
-        
-        
         }
 
     }
 
     public Text timeText;
     public Image timeImage;
+
+    public AudioClip clip;
     // Start is called before the first frame update
     void Start()
     {
         currentTime = maxTime;
         StartCoroutine(Timer(60,1));
-        
 
+        SoundManager.instance.PlayBGM(clip);
     }
 
     // Update is called once per frame

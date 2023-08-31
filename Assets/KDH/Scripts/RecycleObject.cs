@@ -11,7 +11,7 @@ public class RecycleObject : MonoBehaviour
     
     //플라스틱인지,종이인지, 쓰레기 종류에 대한 정의가 필요하다.
     public enum ObjectType { 
-        Plastic,Can,Glass,Complex,Last
+        Plastic,Paper,Can,Glass,Complex,Last
     }
     public ObjectType myType;
     //자식이 있는지, 없는지를 기본적으로 정해야한다,

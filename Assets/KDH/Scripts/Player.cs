@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    //test
+    public AudioClip[] clips;
 
     public Vector3 MouseOffset;
     // Start is called before the first frame update
@@ -25,8 +27,9 @@ public class Player : MonoBehaviour
             if (Physics.Raycast(ray, out hitinfo,100,mask)) {
                 //만약, ray에 닿은놈이.
                 rec = hitinfo.collider.gameObject.GetComponent<RecycleObject>();
+                rec.movement.stopmove();
                 //있느냐.
-
+                SoundManager.instance.PlaySFX(clips[0]);
             }
             
         }
@@ -35,6 +38,7 @@ public class Player : MonoBehaviour
                 rec.movement.rbody.useGravity = true;
                 rec.movement.rbody.isKinematic = false;
                 rec = null;
+                SoundManager.instance.PlaySFX(clips[1]);
             }
             
         }

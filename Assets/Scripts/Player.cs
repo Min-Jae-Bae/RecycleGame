@@ -5,7 +5,7 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
 
-    public float playerMouseCursorForce = 1;
+    public Vector3 MouseOffset;
     // Start is called before the first frame update
     void Start()
     {
@@ -50,7 +50,7 @@ public class Player : MonoBehaviour
                 if (Physics.Raycast(ray, out hit,50.0f, mask)) {
                     Debug.Log("ss");
                     rec.transform
-                        .position = hit.point + Vector3.up * playerMouseCursorForce;
+                        .position = hit.point + Vector3.up + MouseOffset;
                     rec.movement.rbody.velocity = Vector3.zero;
                 }
                 

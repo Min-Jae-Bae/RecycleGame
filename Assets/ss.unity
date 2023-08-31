@@ -823,7 +823,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a98e9eee773f58b4c95891b1bc36f8d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerMouseCursorForce: 0
+  MouseOffset: {x: 0, y: 2, z: 0}
   rec: {fileID: 0}
 --- !u!1 &1016948354
 GameObject:

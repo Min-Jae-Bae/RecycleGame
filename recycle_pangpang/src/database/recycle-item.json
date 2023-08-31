@@ -1,0 +1,121 @@
+[
+    {
+        "ITEM_NO": 1,
+        "ITEM_NAME": "컵라면 용기",
+        "ITEM_DISASSEMBLY": 0,
+        "ITEM_DESCRIPTION": "종이라고 무조건 재활용 되는 건 아니에요.",
+        "MATERIAL_NAME": "일반쓰레기"
+    },
+    {
+        "ITEM_NO": 2,
+        "ITEM_NAME": "일회용 옷걸이",
+        "ITEM_DISASSEMBLY": 0,
+        "ITEM_DESCRIPTION": "철이 들어간 일회용 옷걸이는 고철류로 분류해요.",
+        "MATERIAL_NAME": "캔류(철)"
+    },
+    {
+        "ITEM_NO": 3,
+        "ITEM_NAME": "유리병",
+        "ITEM_DISASSEMBLY": 0,
+        "ITEM_DESCRIPTION": null,
+        "MATERIAL_NAME": "유리"
+    },
+    {
+        "ITEM_NO": 4,
+        "ITEM_NAME": "생수병",
+        "ITEM_DISASSEMBLY": 1,
+        "ITEM_DESCRIPTION": "라벨이 붙은 페트병은 라벨을 떼서 배출해요.",
+        "MATERIAL_NAME": "일반쓰레기"
+    },
+    {
+        "ITEM_NO": 4,
+        "ITEM_NAME": "생수병",
+        "ITEM_DISASSEMBLY": 1,
+        "ITEM_DESCRIPTION": "라벨이 붙은 페트병은 라벨을 떼서 배출해요.",
+        "MATERIAL_NAME": "플라스틱"
+    },
+    {
+        "ITEM_NO": 5,
+        "ITEM_NAME": "신문",
+        "ITEM_DISASSEMBLY": 0,
+        "ITEM_DESCRIPTION": null,
+        "MATERIAL_NAME": "종이"
+    },
+    {
+        "ITEM_NO": 6,
+        "ITEM_NAME": "페트병",
+        "ITEM_DISASSEMBLY": 0,
+        "ITEM_DESCRIPTION": null,
+        "MATERIAL_NAME": "플라스틱"
+    },
+    {
+        "ITEM_NO": 7,
+        "ITEM_NAME": "박스",
+        "ITEM_DISASSEMBLY": 0,
+        "ITEM_DESCRIPTION": null,
+        "MATERIAL_NAME": "플라스틱"
+    },
+    {
+        "ITEM_NO": 8,
+        "ITEM_NAME": "택배박스",
+        "ITEM_DISASSEMBLY": 1,
+        "ITEM_DESCRIPTION": "테이프가 붙은 박스는 테이프를 제거하고 분리수거 해요.",
+        "MATERIAL_NAME": "일반쓰레기"
+    },
+    {
+        "ITEM_NO": 8,
+        "ITEM_NAME": "택배박스",
+        "ITEM_DISASSEMBLY": 1,
+        "ITEM_DESCRIPTION": "테이프가 붙은 박스는 테이프를 제거하고 분리수거 해요.",
+        "MATERIAL_NAME": "종이"
+    },
+    {
+        "ITEM_NO": 9,
+        "ITEM_NAME": "음료 캔",
+        "ITEM_DISASSEMBLY": 0,
+        "ITEM_DESCRIPTION": null,
+        "MATERIAL_NAME": "캔류(철)"
+    },
+    {
+        "ITEM_NO": 10,
+        "ITEM_NAME": "통조림캔",
+        "ITEM_DISASSEMBLY": 0,
+        "ITEM_DESCRIPTION": null,
+        "MATERIAL_NAME": "캔류(철)"
+    },
+    {
+        "ITEM_NO": 11,
+        "ITEM_NAME": "종이 우유팩",
+        "ITEM_DISASSEMBLY": 0,
+        "ITEM_DESCRIPTION": null,
+        "MATERIAL_NAME": "종이"
+    },
+    {
+        "ITEM_NO": 12,
+        "ITEM_NAME": "칫솔",
+        "ITEM_DISASSEMBLY": 0,
+        "ITEM_DESCRIPTION": "칫솔은 플라스틱 폐기물로 분리수거가 불가능해요.",
+        "MATERIAL_NAME": "일반쓰레기"
+    },
+    {
+        "ITEM_NO": 13,
+        "ITEM_NAME": "화장지 심 롤",
+        "ITEM_DISASSEMBLY": 0,
+        "ITEM_DESCRIPTION": null,
+        "MATERIAL_NAME": "종이"
+    },
+    {
+        "ITEM_NO": 14,
+        "ITEM_NAME": "커피",
+        "ITEM_DISASSEMBLY": 1,
+        "ITEM_DESCRIPTION": null,
+        "MATERIAL_NAME": "종이"
+    },
+    {
+        "ITEM_NO": 14,
+        "ITEM_NAME": "커피",
+        "ITEM_DISASSEMBLY": 1,
+        "ITEM_DESCRIPTION": null,
+        "MATERIAL_NAME": "플라스틱"
+    }
+]

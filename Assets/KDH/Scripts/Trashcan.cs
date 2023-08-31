@@ -36,15 +36,28 @@ public class Trashcan : MonoBehaviour
             Debug.Log("너 맞음");
             ScoreManager.instance.SCORE+= obj.add_score;
             //사운드 들리고
-            Instantiate(particle,transform.position + ParticleOffset, Quaternion.identity);
+            checkInstantiate(particle, transform.position + ParticleOffset, Quaternion.identity);
+            //Instantiate(particle,transform.position + ParticleOffset, Quaternion.identity);
             SoundManager.instance.PlaySFX(clips[0]);
         }
         else {
             Debug.Log("너 틀림");
             ScoreManager.instance.SCORE -= obj.less_score;
-            Instantiate(particle2, transform.position + ParticleOffset, Quaternion.identity);
+            checkInstantiate(particle2, transform.position + ParticleOffset, Quaternion.identity);
+            //Instantiate(particle2, transform.position + ParticleOffset, Quaternion.identity);
             SoundManager.instance.PlaySFX(clips[1]);
+
+            if (obj.WarningText.Length > 0) {
+                GameManager.instance.warningText.text = obj.WarningText;
+                GameManager.instance.Onanim();
+            }
         }
         Destroy(other.gameObject);
+    }
+
+    public void checkInstantiate(GameObject gm,Vector3 pos,Quaternion rot) {
+        if (gm) {
+            Instantiate(gm, pos , rot);
+        }
     }
 }

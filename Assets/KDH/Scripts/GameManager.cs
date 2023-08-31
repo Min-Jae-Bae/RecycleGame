@@ -9,7 +9,7 @@ public class GameManager : MonoBehaviour
         Start,Pause,Defeat
     }
     public MainGameState myGameState;
-
+    public Text warningText;
     public MainGameState GameStateManage {
         set {
             myGameState = value;
@@ -24,6 +24,7 @@ public class GameManager : MonoBehaviour
         }
 
     }
+    public static GameManager instance;
 
     public Text timeText;
     public Image timeImage;
@@ -32,6 +33,7 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        instance = this;
         currentTime = maxTime;
         StartCoroutine(Timer(currentTime, 1));
 
@@ -73,5 +75,12 @@ public class GameManager : MonoBehaviour
         SoundManager.instance.PlayBGM(gameOverClip);
         Time.timeScale = 0;
     
+    }
+    public Animator anim;
+    public void Onanim() {
+        anim.SetTrigger("On");
+    }
+    public void Offanim() {
+        anim.SetTrigger("Off");
     }
 }

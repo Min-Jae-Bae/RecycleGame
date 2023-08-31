@@ -13,7 +13,7 @@ public class RecycleObject : MonoBehaviour
 
     //플라스틱인지,종이인지, 쓰레기 종류에 대한 정의가 필요하다.
     public enum ObjectType { 
-        Plastic,Paper,Can,Glass,Complex,Last
+        Plastic,Paper,Can,Glass,Complex,Landfill,Last
     }
     public ObjectType myType;
     //자식이 있는지, 없는지를 기본적으로 정해야한다,
@@ -27,6 +27,7 @@ public class RecycleObject : MonoBehaviour
     }
     public ObjectState myState;
 
+    public string WarningText;
     public ObjectState STATE
     {
         set {
@@ -64,6 +65,7 @@ public class RecycleObject : MonoBehaviour
 
     private void Awake()
     {
+        movement = GetComponent<Movement>();
         //movement.enabled = IsParent;
         //원래는 이렇게 하면 안되는디.. 2차까지만 분해니까 자동으로 리스트 주입
         for (int i = 0; i < transform.childCount; i++)
@@ -79,7 +81,7 @@ public class RecycleObject : MonoBehaviour
     }
     void Start()
     {
-        movement = GetComponent<Movement>();
+        
         //복합적인 물체는 자신의 자식을 비활성화
         if (myType == ObjectType.Complex && childObject.Count > 0) {
             foreach (RecycleObject resobject in childObject)

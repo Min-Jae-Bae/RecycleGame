@@ -11,7 +11,13 @@ public class ScoreManager : MonoBehaviour
     public int SCORE
     {
         get { return score; }
-        set { score = value; testText.text = "당신의 점수는" + value; }
+        set { 
+                
+            score = value; 
+            if (score <= 0) {
+                score = 0;
+            }
+            testText.text = "당신의 점수는" + score; }
 
     }
     // Start is called before the first frame update

@@ -7,11 +7,15 @@ public class Movement : MonoBehaviour
     public Rigidbody rbody;
     public Collider mycoll;
     // Start is called before the first frame update
-    void Start()
+    private void Awake()
     {
         rbody = GetComponent<Rigidbody>();
         mycoll = GetComponent<Collider>();
         rbody.constraints = RigidbodyConstraints.FreezePositionZ;
+    }
+    void Start()
+    {
+        
     }
     public bool ismove;
     public float speed;
@@ -54,7 +58,7 @@ public class Movement : MonoBehaviour
         yield return null;
         while (true) {
             yield return new WaitForSeconds(Time.deltaTime);
-            rbody.velocity = new Vector3(-1, rbody.velocity.y, rbody.velocity.z);
+            rbody.velocity = new Vector3(1, rbody.velocity.y, rbody.velocity.z);
         }
     }
 }

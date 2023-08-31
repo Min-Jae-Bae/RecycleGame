@@ -17,9 +17,17 @@ public class Trash : MonoBehaviour
         
     }
 
+    public AudioClip clip;
     private void OnTriggerEnter(Collider other)
     {
-        Destroy(other.gameObject);
+        RecycleObject obj = other.gameObject.GetComponent<RecycleObject>();
+        if (obj) {
+            ScoreManager.instance.SCORE -= obj.less_score;
+            SoundManager.instance.PlaySFX(clip);
+            Destroy(other.gameObject);
+            
+        }
+        
     }
 
     

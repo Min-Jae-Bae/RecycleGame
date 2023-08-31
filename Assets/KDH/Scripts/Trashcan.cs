@@ -8,6 +8,7 @@ public class Trashcan : MonoBehaviour
     public RecycleObject.ObjectType TrashType;
     // Start is called before the first frame update
     public GameObject particle;
+    public GameObject particle2;
 
     public AudioClip[] clips;
     void Start()
@@ -21,6 +22,7 @@ public class Trashcan : MonoBehaviour
         
     }
 
+    public Vector3 ParticleOffset;
     private void OnTriggerEnter(Collider other)
     {
         //쓰레기가 들어올때 
@@ -34,12 +36,13 @@ public class Trashcan : MonoBehaviour
             Debug.Log("너 맞음");
             ScoreManager.instance.SCORE+= obj.add_score;
             //사운드 들리고
-            Instantiate(particle,transform.position, Quaternion.identity);
+            Instantiate(particle,transform.position + ParticleOffset, Quaternion.identity);
             SoundManager.instance.PlaySFX(clips[0]);
         }
         else {
             Debug.Log("너 틀림");
             ScoreManager.instance.SCORE -= obj.less_score;
+            Instantiate(particle2, transform.position + ParticleOffset, Quaternion.identity);
             SoundManager.instance.PlaySFX(clips[1]);
         }
         Destroy(other.gameObject);

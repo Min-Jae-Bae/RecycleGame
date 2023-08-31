@@ -585,9 +585,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TrashType: 0
   particle: {fileID: 1247311384876784, guid: 4adffb0018aeda44e9263f901167af1f, type: 3}
+  particle2: {fileID: 1892078723244562, guid: 5a6bb645aea018f45b28f7c524d49a4c, type: 3}
   clips:
   - {fileID: 8300000, guid: 52320e590bf774734a288886eba557ba, type: 3}
   - {fileID: 8300000, guid: 72127805eb2bc4e7fbf2e02eca266cfa, type: 3}
+  ParticleOffset: {x: 0, y: 0, z: -4}
 --- !u!1 &626461679
 GameObject:
   m_ObjectHideFlags: 0
@@ -744,6 +746,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb040624c580e234ba251ee7c79dd7bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  clip: {fileID: 8300000, guid: fe0b1f9aeb45b41b089175aeeabd5d95, type: 3}
 --- !u!1 &819579202
 GameObject:
   m_ObjectHideFlags: 0
@@ -844,7 +847,9 @@ MonoBehaviour:
   clips:
   - {fileID: 8300000, guid: 724131bc8a7f34041bb9f1701f0cb58d, type: 3}
   - {fileID: 8300000, guid: 130a177e727814a2ea78a886ab72213d, type: 3}
+  - {fileID: 8300000, guid: d8d04c6f80a1140db85ede568dab1f51, type: 3}
   MouseOffset: {x: 0, y: 8, z: -8}
+  ClickEffect: {fileID: 100000, guid: 473193dc10ccab04186ef26f3191c949, type: 3}
   rec: {fileID: 0}
 --- !u!1 &1016948354
 GameObject:
@@ -1038,9 +1043,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TrashType: 2
   particle: {fileID: 1247311384876784, guid: 4adffb0018aeda44e9263f901167af1f, type: 3}
+  particle2: {fileID: 1892078723244562, guid: 5a6bb645aea018f45b28f7c524d49a4c, type: 3}
   clips:
   - {fileID: 8300000, guid: 52320e590bf774734a288886eba557ba, type: 3}
   - {fileID: 8300000, guid: 72127805eb2bc4e7fbf2e02eca266cfa, type: 3}
+  ParticleOffset: {x: 0, y: 0, z: -4}
 --- !u!1 &1383561179
 GameObject:
   m_ObjectHideFlags: 0
@@ -1752,9 +1759,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TrashType: 3
   particle: {fileID: 1247311384876784, guid: 4adffb0018aeda44e9263f901167af1f, type: 3}
+  particle2: {fileID: 1892078723244562, guid: 5a6bb645aea018f45b28f7c524d49a4c, type: 3}
   clips:
   - {fileID: 8300000, guid: 52320e590bf774734a288886eba557ba, type: 3}
   - {fileID: 8300000, guid: 72127805eb2bc4e7fbf2e02eca266cfa, type: 3}
+  ParticleOffset: {x: 0, y: 0, z: -4}
 --- !u!1 &1893547282
 GameObject:
   m_ObjectHideFlags: 0

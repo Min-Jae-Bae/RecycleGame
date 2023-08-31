@@ -8,6 +8,7 @@ public class Player : MonoBehaviour
     public AudioClip[] clips;
 
     public Vector3 MouseOffset;
+    public GameObject ClickEffect;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,14 +23,30 @@ public class Player : MonoBehaviour
             //카메라에서 레이를 만들고
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             RaycastHit hitinfo;
-            int mask = 1 << LayerMask.NameToLayer("Parent");
+
+            //레이어 마스크를 이용해서 제한대상 설정(왜 되는거였지? 까먹음)
+            int mask1 = 1 << LayerMask.NameToLayer("Parent");
+            int mask2 = 1 << LayerMask.NameToLayer("floor");
+            int mask = mask1 | mask2;
             //레이를 발사~~~
-            if (Physics.Raycast(ray, out hitinfo,100,mask)) {
+            if (Physics.Raycast(ray, out hitinfo,200,mask)) {
+
                 //만약, ray에 닿은놈이.
                 rec = hitinfo.collider.gameObject.GetComponent<RecycleObject>();
-                rec.movement.stopmove();
-                //있느냐.
-                SoundManager.instance.PlaySFX(clips[0]);
+                //땅바닥에 클릭한경우
+                if (rec == null)
+                {
+                    Debug.Log("왜 안되냐?");
+                    Instantiate(ClickEffect, hitinfo.point, Quaternion.identity);
+                    SoundManager.instance.PlaySFX(clips[2]);
+
+                }
+                else {
+                    
+                    rec.movement.stopmove();
+                    //있느냐.
+                    SoundManager.instance.PlaySFX(clips[0]);
+                }
             }
             
         }

@@ -1397,7 +1397,7 @@ MonoBehaviour:
   timeText: {fileID: 0}
   timeImage: {fileID: 1396673266}
   clip: {fileID: 8300000, guid: 475f4837af487ce4a9e68bb227455e4c, type: 3}
-  maxTime: 5
+  maxTime: 60
   currentTime: 0
   gameover: {fileID: 1408347140}
   gameOverClip: {fileID: 8300000, guid: 90eae78e8ce85a849b5b0ca11b2de641, type: 3}
